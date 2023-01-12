@@ -1,0 +1,40 @@
+{
+  "name": "electrontypescrip",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && electron .",
+    "dev": "concurrently \"tsc -w\" \"electron .\"",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^22.0.1",
+    "electron-reload": "^2.0.0-alpha.1",
+    "mongoose": "^6.8.3",
+    "typescript": "^4.9.4"
+  },
+  "devDependencies": {
+    "@types/electron": "^1.6.10",
+    "concurrently": "^7.6.0"
+  },
+  "build": {
+    "productName": "Ander Tasks TS",
+    "appId": "com.lopscorp.tasks",
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": false,
+      "oneClick": false,
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico",
+      "uninstallDisplayName": "Ander Tasks Uninstall"
+    }
+  }
+}
